@@ -1,0 +1,70 @@
+var peixes = new List<String>{"nemo", "dory", "george"};
+
+peixes.Remove("nemo");
+
+foreach(var peixe in peixes){
+    Console.WriteLine(peixe + " ");
+}
+
+var numeros = new List<int>{0,1,2,3,4,5,6,7,8,9};
+
+for (var i = numeros.Count - 1; i >=0; i--){
+    if(numeros[i] % 2 == 1){
+        numeros.RemoveAt(i);
+    }
+}
+
+numeros.ForEach(numero => Console.WriteLine(numero));
+
+var nomes = new List<String>{"hoshi", "jihoon", "percy jackson"};
+
+foreach(var nome in nomes){
+    Console.WriteLine($"Ola {nome.ToUpper()}");
+}
+
+Console.WriteLine();
+nomes.Add("apolo");
+nomes.Add("hades");
+nomes.Remove("hoshi");
+
+foreach(var nome in nomes){
+    Console.WriteLine($"Ola {nome.ToUpper()}");
+}
+
+Console.WriteLine($"O protagonista é o {nomes[1]}");
+Console.WriteLine($"Adicionei {nomes[2]} e {nomes[3]} no livro");
+Console.WriteLine($"A lista tem {nomes.Count} pessoas");
+
+var index = nomes.IndexOf("jihoon");
+
+if(index == -1){
+    Console.WriteLine($"Item nao encontrado {index}");
+} else{
+    Console.WriteLine($"O nome {nomes[index]} esta no indice {index}");
+}
+
+index = nomes.IndexOf("a");
+
+if(index == -1){
+    Console.WriteLine($"Item nao encontrado {index}");
+} else{
+    Console.WriteLine($"O nome {nomes[index]} esta no indice {index}");
+}
+
+nomes.Sort();
+
+foreach(var nome in nomes){
+    Console.WriteLine($"Ola {nome.ToUpper()}");
+}
+
+Console.WriteLine("---------------------------------------------------------------------");
+
+var fibonacciNumeros = new List<int>{1,1};
+
+do {
+Console.WriteLine($"item {fibonacciNumeros.Count - 1}: {fibonacciNumeros[fibonacciNumeros.Count - 2]}");
+var previo = fibonacciNumeros[fibonacciNumeros.Count - 1];
+var previo2 = fibonacciNumeros[fibonacciNumeros.Count - 2];
+
+fibonacciNumeros.Add(previo + previo2);
+} while (fibonacciNumeros.Count < 22);
